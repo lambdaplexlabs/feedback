@@ -122,7 +122,6 @@ body:
     id: logs
     attributes:
       label: Relevant logs or screenshots
-      description: Paste any error messages, console output, or screenshots. This will be automatically formatted, no backticks needed.
-      render: shell
+      description: Paste error messages or console output, or drag and drop screenshots/files here.
     validations:
       required: false
