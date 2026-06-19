@@ -1,0 +1,127 @@
+name: 🐞 Bug Report
+description: Report a reproducible bug in Lambdaplex
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill out the fields below so we can reproduce and fix it quickly.
+
+        ⚠️ **Found a security vulnerability?** Do **not** file it here. Please follow our [security policy](https://github.com/lambdaplexlabs/feedback/security/policy) to report it privately.
+
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Prerequisites
+      options:
+        - label: I have searched [existing issues](https://github.com/lambdaplexlabs/feedback/issues?q=is%3Aissue) and this is not a duplicate.
+          required: true
+        - label: I have read the [documentation](https://lambdaplex-labs.gitbook.io/lambdaplex).
+          required: true
+        - label: This is a bug report, **not** a security vulnerability (those go through our [security policy](https://github.com/lambdaplexlabs/feedback/security/policy)).
+          required: true
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Affected component
+      description: Which part of Lambdaplex is affected?
+      options:
+        - Settlement smart contract
+        - Matching service / order book
+        - SDK / API
+        - Web app / UI
+        - Documentation
+        - Other / not sure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: network
+    attributes:
+      label: Network
+      options:
+        - Hedera Mainnet
+        - Hedera Testnet
+        - Not applicable
+    validations:
+      required: true
+
+  - type: dropdown
+    id: order-type
+    attributes:
+      label: Order type (if relevant)
+      description: If the bug involves an order, which type?
+      options:
+        - Not applicable
+        - limit
+        - market
+        - stop_limit
+        - stop_market
+        - take_profit_limit
+        - take_profit_market
+    validations:
+      required: false
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug and what you expected to happen instead.
+      placeholder: When I submitted a limit order for HBAR/USDC, the trade was rejected even though the price condition was met...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Step-by-step instructions so we can reproduce the issue.
+      placeholder: |
+        1. Go to '...'
+        2. Create an order with '...'
+        3. Submit '...'
+        4. See error
+    validations:
+      required: true
+
+  - type: input
+    id: tx-id
+    attributes:
+      label: Transaction ID / consensus timestamp
+      description: If onchain, paste the Hedera transaction ID (e.g. `0.0.1234@1700000000.000000000`) or a HashScan link. **Do not paste private keys or seed phrases.**
+      placeholder: "0.0.1234@1700000000.000000000"
+    validations:
+      required: false
+
+  - type: input
+    id: account-id
+    attributes:
+      label: Account ID (if relevant)
+      description: The Hedera account ID involved, e.g. `0.0.5678`. Public account IDs only — never share private keys.
+      placeholder: "0.0.5678"
+    validations:
+      required: false
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Where did this happen? Include relevant versions.
+      value: |
+        - SDK / API version:
+        - Wallet (e.g. HashPack, Blade, Kabila):
+        - Browser / OS (if web app):
+        - Contract address (if known):
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs or screenshots
+      description: Paste any error messages, console output, or screenshots. This will be automatically formatted, no backticks needed.
+      render: shell
+    validations:
+      required: false

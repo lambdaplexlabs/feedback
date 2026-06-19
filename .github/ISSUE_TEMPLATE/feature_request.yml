@@ -1,0 +1,66 @@
+name: 💡 Feature Request
+description: Suggest a new feature or improvement for Lambdaplex
+title: "[Feature]: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing an idea! Please describe the problem you're trying to solve, not only the solution you have in mind — it helps us find the best approach.
+
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Prerequisites
+      options:
+        - label: I have searched [existing issues](https://github.com/lambdaplexlabs/feedback/issues?q=is%3Aissue) and this hasn't already been requested.
+          required: true
+        - label: I have checked the [documentation](https://lambdaplex-labs.gitbook.io/lambdaplex) and roadmap.
+          required: true
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Related component
+      options:
+        - Settlement smart contract
+        - Matching service / order book
+        - SDK / API
+        - Web app / UI
+        - Documentation
+        - Other / cross-cutting
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Describe the limitation or pain point. What are you trying to do that you can't do today?
+      placeholder: As a market maker, I can't ... which means ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe what you'd like to happen.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Any workarounds or alternative approaches you've thought about.
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Anything else — mockups, links, references, related protocols.
+    validations:
+      required: false
