@@ -28,12 +28,13 @@ body:
       label: Affected component
       description: Which part of Lambdaplex is affected?
       options:
-        - Settlement smart contract
-        - Matching service / order book
-        - SDK / API
-        - Web app / UI
+        - Web app
+        - Order placement
+        - Trade settlement
+        - Vaults
+        - API
         - Documentation
-        - Other / not sure
+        - Other
     validations:
       required: true
 
@@ -42,9 +43,7 @@ body:
     attributes:
       label: Network
       options:
-        - Hedera Mainnet
-        - Hedera Testnet
-        - Not applicable
+        - Hedera mainnet
     validations:
       required: true
 
@@ -55,12 +54,14 @@ body:
       description: If the bug involves an order, which type?
       options:
         - Not applicable
-        - limit
-        - market
-        - stop_limit
-        - stop_market
-        - take_profit_limit
-        - take_profit_market
+        - Limit
+        - Market
+        - Stop Limit
+        - Stop Market
+        - Stop Loss Limit
+        - Stop Loss Market
+        - Take Profit Limit
+        - Take Profit Market
     validations:
       required: false
 
